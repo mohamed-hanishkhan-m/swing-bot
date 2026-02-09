@@ -1,7 +1,7 @@
 from data.fetch_data import get_data
 from strategies.swing_strategy import add_indicators
 from telegram_bot import send_message
-from Paper_Trading.paper_engine import try_buy, try_sell
+from paper_trading.paper_engine import try_buy, try_sell
 
 import time
 
@@ -21,7 +21,7 @@ for stock in stocks:
         signals.append(f"BUY: {stock} at {last['Close']} RSI={last['RSI']:.2f}")
     # SELL check (runs every scan)
     try_sell(last["Close"])
-    
+
 # # FORCE TEST SIGNAL
 # signals.append(f"TEST BUY: {stock} at {last['Close']}")
 
