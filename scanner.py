@@ -22,9 +22,6 @@ for stock in stocks:
     # SELL check (runs every scan)
     try_sell(last["Close"])
 
-# # FORCE TEST SIGNAL
-# signals.append(f"TEST BUY: {stock} at {last['Close']}")
-
 print("Today's Signals:")
 for s in signals:
     print(s)
