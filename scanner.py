@@ -29,6 +29,7 @@ for s in signals:
 print("Signals list:", signals)
 
 # Send Telegram
-message = "\n".join(signals)
-send_message(message)
+if signals:
+    message = "\n".join(signals)
+    send_message(message)
 time.sleep(2)
