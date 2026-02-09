@@ -60,8 +60,7 @@ def generate_equity_curve(send_to_telegram=False):
             f"Capital: ₹{capital_values[-1]:,.2f}\n"
             f"Completed Trades: {len(capital_values)}"
         )
-    send_photo(OUTPUT_FILE, caption)
-
+        send_photo(OUTPUT_FILE, caption)
 
 if __name__ == "__main__":
     # Change to True when you want to send image

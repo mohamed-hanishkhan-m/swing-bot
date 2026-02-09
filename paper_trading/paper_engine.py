@@ -69,7 +69,7 @@ def try_buy(stock, price):
     save_state(state)
 
     log_trade([
-        datetime.now(), stock, "BUY", price, qty, 0, capital
+        datetime.now().isoformat(), stock, "BUY", price, qty, 0, capital
     ])
 
 
@@ -91,7 +91,7 @@ def try_sell(price):
         save_portfolio(portfolio)
 
         log_trade([
-            datetime.now(), trade["stock"], "SELL", price, qty, pnl, portfolio["capital"]
+            datetime.now().isoformat(), trade["stock"], "SELL", price, qty, pnl, portfolio["capital"]
         ])
 
         # 🔴 Drawdown kill-switch check

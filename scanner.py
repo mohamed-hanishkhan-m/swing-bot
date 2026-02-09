@@ -18,7 +18,9 @@ for stock in stocks:
 
     # Trading condition
     if last["Close"] > last["EMA200"] and last["RSI"] < 40:
+        try_buy(stock, last["Close"])
         signals.append(f"BUY: {stock} at {last['Close']} RSI={last['RSI']:.2f}")
+
     # SELL check (runs every scan)
     try_sell(last["Close"])
 
@@ -32,4 +34,3 @@ print("Signals list:", signals)
 if signals:
     message = "\n".join(signals)
     send_message(message)
-time.sleep(2)
